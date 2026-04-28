@@ -23,11 +23,23 @@ public class TextWriter : MonoBehaviour
         white,
         red
     }
-    public void Write(string text, TextColor color = TextColor.yellow)
+    public void WriteYellow(string text)
     {
         StopAllCoroutines();
         isWriting = false;
-        StartCoroutine(WriteText(text, color));
+        StartCoroutine(WriteText(text, TextColor.yellow));
+    }
+    public void WriteWhite(string text)
+    {
+        StopAllCoroutines();
+        isWriting = false;
+        StartCoroutine(WriteText(text, TextColor.white));
+    }
+    public void WriteRed(string text)
+    {
+        StopAllCoroutines();
+        isWriting = false;
+        StartCoroutine(WriteText(text, TextColor.red));
     }
     bool isWriting = false;
     bool wannaSkip = false;
@@ -38,7 +50,6 @@ public class TextWriter : MonoBehaviour
     {
         isWriting = true;
         canvas.enabled = true;
-        defaultPitch = printAudioSource.pitch;
         string stringBuffer = "";
         textMesh.text = string.Empty;
         for (int i = 0; i < text.Length; i++)
@@ -73,5 +84,6 @@ public class TextWriter : MonoBehaviour
     void Awake()
     {
         interactInputAction = InputSystem.actions.FindAction("Interact");
+        defaultPitch = printAudioSource.pitch;
     }
 }
