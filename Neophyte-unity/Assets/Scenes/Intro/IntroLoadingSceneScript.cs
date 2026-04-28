@@ -24,7 +24,7 @@ public class IntroLoadingSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         allowActivation = false;
-        var sceneLoading = SceneManager.LoadSceneAsync("Menu", LoadSceneMode.Single);
+        var sceneLoading = SceneManager.LoadSceneAsync("Game", LoadSceneMode.Single);
         sceneLoading.allowSceneActivation = false;
         while (!allowActivation)
         {
