@@ -15,7 +15,7 @@
 /References_for_visual_design/
 *.log
 # temporary ignoring fallback cause its regulary changing when testing
-#/Assets/TextMesh Pro/Fonts/SuboleyaRegularSDF.asset
+/Assets/TextMesh Pro/Fonts/SuboleyaRegularSDF.asset
 
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
