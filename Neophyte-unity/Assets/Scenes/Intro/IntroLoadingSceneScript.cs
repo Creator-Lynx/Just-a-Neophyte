@@ -17,8 +17,8 @@ public class IntroLoadingSceneScript : MonoBehaviour
     public void AnimationEndCallBack()
     {
         allowActivation = true;
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.visible = true;
     }
     IEnumerator LoadingScene()
     {
