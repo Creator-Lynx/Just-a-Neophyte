@@ -28,7 +28,7 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
     public void Interact()
     {
         
-
+        PlayerDontGetMeat();
 
     }
 

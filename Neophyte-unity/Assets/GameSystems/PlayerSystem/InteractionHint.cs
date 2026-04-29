@@ -9,11 +9,11 @@ public class InteractionHint : MonoBehaviour
     public void ShowHint (string str)
     {
         text.text = str;
-        canvas.enabled = true;
+        text.enabled = true;
     }
 
     public void HideHint()
     {
-        canvas.enabled = false;
+        text.enabled = false;
     }
 }
