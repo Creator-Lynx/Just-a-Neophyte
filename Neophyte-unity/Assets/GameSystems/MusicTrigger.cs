@@ -1,19 +1,19 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BasicTrigger : MonoBehaviour
+public class MusicTrigger : MonoBehaviour
 {
     bool isUsed = false;
+    [SerializeField] int stage = 0;
     void OnTriggerEnter(Collider other)
     {
         //do text
         if(!isUsed)
         {
-            triggerEvent.Invoke();
+            MusicSetter.SetSnapshot(stage);
             isUsed = true;
         }
 
     }
 
-    [SerializeField] UnityEvent triggerEvent;
 }

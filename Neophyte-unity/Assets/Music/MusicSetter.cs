@@ -19,7 +19,7 @@ public class MusicSetter : MonoBehaviour
     {
         if(id < 0 || id >= snapshots.Length) return;
 
-        snapshots[id].TransitionTo(1f);
+        snapshots[id].TransitionTo(2.5f);
     }
 
     //test
