@@ -27,8 +27,13 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
 
     public void Interact()
     {
-        
-        PlayerDontGetMeat();
+        if(PlayerHandController.GetState() == HandState.empty)
+        {
+            PlayerGetMeat();
+            PlayerHandController.SetState(HandState.meat);
+        }
+        else
+            PlayerDontGetMeat();
 
     }
 
@@ -37,14 +42,16 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
         //_collider.enabled = false;
         //_trigger.enabled = false;
         //_rigidbody.useGravity = false;
-        //_rigidbody.isKinematic = true;
-        //_rigidbody.Sleep();
+        _rigidbody.isKinematic = true;
+        _rigidbody.Sleep();
         //_rigidbody.interpolation = RigidbodyInterpolation.None;
         //GetComponent<Cloth>().enabled = false;
         //
-//
-        //audioSourceTake.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
-        //audioSourceTake.Play();
+        
+        audioSourceTake.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
+        audioSourceTake.Play();
+        GetComponent<SkinnedMeshRenderer>().enabled = false;
+        Destroy(gameObject, 1f);
     }
 
     void PlayerDontGetMeat()
