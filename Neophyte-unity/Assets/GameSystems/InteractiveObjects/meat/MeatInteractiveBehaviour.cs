@@ -22,7 +22,7 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
 
     public string GetInteractionHint()
     {
-        return "мясо";
+        return "кусок плоти";
     }
 
     public void Interact()
@@ -49,8 +49,8 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
 
     void PlayerDontGetMeat()
     {
-        //_rigidbody.AddTorque(Vector3.up, ForceMode.Impulse);
-        //audioSourceMain.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
-        //audioSourceMain.Play();
+        _rigidbody.AddTorque(Vector3.up, ForceMode.Impulse);
+        audioSourceMain.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
+        audioSourceMain.Play();
     }
 }

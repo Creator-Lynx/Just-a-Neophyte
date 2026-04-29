@@ -5,15 +5,15 @@ public class InteractionHint : MonoBehaviour
 {
 
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Animator animator;
+    [SerializeField] Canvas canvas;
     public void ShowHint (string str)
     {
-        text.text = str + " (E)";
-        animator.SetBool("isShowed", true);
+        text.text = str;
+        canvas.enabled = true;
     }
 
     public void HideHint()
     {
-        animator.SetBool("isShowed", false);
+        canvas.enabled = false;
     }
 }
