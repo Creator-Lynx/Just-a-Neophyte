@@ -14,6 +14,11 @@ public class MusicSetter : MonoBehaviour
     void Awake()
     {
         instance = this;
+        
+    }
+    void Start()
+    {
+        snapshots[1].TransitionTo(4f);
     }
     void operateSnapshot(int id)
     {

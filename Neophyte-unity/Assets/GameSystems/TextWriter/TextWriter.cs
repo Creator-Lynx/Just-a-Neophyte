@@ -64,6 +64,7 @@ public class TextWriter : MonoBehaviour
             {
                 textMesh.text = colorPrefix[(int)color] + text + colorPostfix;
                 isWriting = false;
+                wannaSkip = false;
                 break;
             }
         }

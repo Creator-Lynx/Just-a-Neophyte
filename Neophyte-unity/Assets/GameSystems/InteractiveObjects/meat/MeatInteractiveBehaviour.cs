@@ -6,6 +6,7 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
     [SerializeField] Collider _collider, _trigger;
     [SerializeField] Rigidbody _rigidbody;
     [SerializeField] float pitchShiftExtremum = 0.1f;
+    [SerializeField] string hint = "кусок плоти";
 
     void OnCollisionEnter(Collision collision)
     {
@@ -22,7 +23,7 @@ public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
 
     public string GetInteractionHint()
     {
-        return "кусок плоти";
+        return hint;
     }
 
     public void Interact()

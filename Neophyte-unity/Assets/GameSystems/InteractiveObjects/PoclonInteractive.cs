@@ -1,16 +1,33 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PoclonInteractive : IInteractivable
+public class PoclonInteractive : MonoBehaviour, IInteractivable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] UnityEvent onCut;
+    [SerializeField] UnityEvent onRelease;
+    [SerializeField] UnityEvent getView;
+    public string GetInteractionHint()
     {
-        
+        return "поклониться";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        
+        StartCoroutine(Poklon());
+
     }
+
+    IEnumerator Poklon()
+    {
+        GetComponent<Collider>().enabled = false;
+        onCut.Invoke();
+        yield return new WaitForSeconds(3);
+
+        onRelease.Invoke();
+        MusicSetter.SetSnapshot(3);
+        yield return new WaitForSeconds(3);
+        getView.Invoke();
+    }
+
 }
