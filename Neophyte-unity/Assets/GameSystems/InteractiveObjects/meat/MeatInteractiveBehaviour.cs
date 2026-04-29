@@ -1,0 +1,56 @@
+using UnityEngine;
+
+public class MeatInteractiveBehaviour : MonoBehaviour, IInteractivable
+{
+    [SerializeField] AudioSource audioSourceMain, audioSourceTake;
+    [SerializeField] Collider _collider, _trigger;
+    [SerializeField] Rigidbody _rigidbody;
+    [SerializeField] float pitchShiftExtremum = 0.1f;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        audioSourceMain.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
+        audioSourceMain.Play();
+    }
+
+    public void EnableDropState()
+    {
+        _collider.enabled = true;
+        _trigger.enabled = true;
+        _rigidbody.useGravity = true;
+    }
+
+    public string GetInteractionHint()
+    {
+        return "мясо";
+    }
+
+    public void Interact()
+    {
+        
+
+
+    }
+
+    void PlayerGetMeat()
+    {
+        //_collider.enabled = false;
+        //_trigger.enabled = false;
+        //_rigidbody.useGravity = false;
+        //_rigidbody.isKinematic = true;
+        //_rigidbody.Sleep();
+        //_rigidbody.interpolation = RigidbodyInterpolation.None;
+        //GetComponent<Cloth>().enabled = false;
+        //
+//
+        //audioSourceTake.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
+        //audioSourceTake.Play();
+    }
+
+    void PlayerDontGetMeat()
+    {
+        //_rigidbody.AddTorque(Vector3.up, ForceMode.Impulse);
+        //audioSourceMain.pitch = 1 + Random.Range(-1f, 1f) * pitchShiftExtremum;
+        //audioSourceMain.Play();
+    }
+}
